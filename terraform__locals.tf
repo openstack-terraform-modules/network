@@ -1,5 +1,5 @@
 locals {
-    deployment = module.deployment.outputs
+    deployment = var.deployment
 
     domain_name = format("%s.%s",
         data.openstack_identity_auth_scope_v3.scope.project_name,
