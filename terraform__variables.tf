@@ -1,52 +1,36 @@
-variable PUBLIC_NETWORK_NAME {
+variable public_network_name {
     type = string
 }
 
-variable CLUSTER_MANAGER_COUNT {
-    type = number
-}
-
-variable CLUSTER_COMPUTE_COUNT {
-    type = number
-}
-
-variable CLUSTER_PREFIX {
-    type = string
-}
-
-variable NAMESERVERS {
-    type = list
+variable nameservers {
+    type = list(string)
     default = [ "8.8.8.8" ]
 }
 
-variable PRIVATE_NETWORK_CIDR {
+variable private_network_cidr {
     type = string
 }
 
-variable PRIVATE_NETWORK_NAME {
+variable private_network_name {
+    type = string
+    default = "private"
+}
+
+variable domain_name {
     type = string
 }
 
-variable DOMAIN_NAME {
-    type = string
-}
-
-variable PRIVATE_CLUSTER {
-    type    = bool
-    default = true
-}
-
-variable PRIVATE_SUBNET_DHCP_ENABLE {
+variable private_subnet_dhcp_enable {
     type    = bool
     default = false
 }
 
-variable PRIVATE_SUBNET_DHCP_POOL_START {
+variable private_subnet_dhcp_pool_start {
     type = number
     default = 100
 }
 
-variable PRIVATE_SUBNET_DHCP_POOL_END {
+variable private_subnet_dhcp_pool_end {
     type = number
     default = 200
 }

@@ -3,14 +3,14 @@ locals {
 
     domain_name = format("%s.%s",
         data.openstack_identity_auth_scope_v3.scope.project_name,
-        var.DOMAIN_NAME
+        var.domain_name
     )
 
-    public_network_name = var.PUBLIC_NETWORK_NAME
-    private_network_cidr = var.PRIVATE_NETWORK_CIDR
+    public_network_name = var.public_network_name
+    private_network_cidr = var.private_network_cidr
 
     private_subnet_name = format("%s-%s",
-        var.PRIVATE_NETWORK_NAME,
+        var.private_network_name,
         local.deployment.id
     )
 
@@ -19,19 +19,19 @@ locals {
         local.domain_name
     )
 
-    private_subnet_dhcp_enable = var.PRIVATE_SUBNET_DHCP_ENABLE
+    private_subnet_dhcp_enable = var.private_subnet_dhcp_enable
 
     private_subnet_dhcp_pool_start = cidrhost(
         local.private_network_cidr,
-        var.PRIVATE_SUBNET_DHCP_POOL_START
+        var.private_subnet_dhcp_pool_start
     )
     private_subnet_dhcp_pool_end = cidrhost(
         local.private_network_cidr,
-        var.PRIVATE_SUBNET_DHCP_POOL_END
+        var.private_subnet_dhcp_pool_end
     )
 
     private_network_name = format("%s-%s",
-        var.PRIVATE_NETWORK_NAME,
+        var.private_network_name,
         local.deployment.id
     )
 
@@ -48,4 +48,6 @@ locals {
         local.public_to_private_router_name,
         local.domain_name,
     )
+
+    nameservers = var.nameservers
 }
