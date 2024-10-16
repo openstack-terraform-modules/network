@@ -1,3 +1,10 @@
+variable deployment {
+    type = object({
+      id = string
+      uuid = string
+      tenant_name = string
+    })
+}
 variable public_network_name {
     type = string
 }
