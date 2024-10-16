@@ -3,6 +3,10 @@
 ## Usage
 
 ```hcl
+module deployment {
+    source = "git::https://github.com/openstack-terraform-modules/deployment.git"
+}
+
 module network {
     source = "git::https://github.com/openstack-terraform-modules/network.git"
 
