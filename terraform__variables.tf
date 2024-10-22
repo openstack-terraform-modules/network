@@ -3,6 +3,7 @@ variable deployment {
       id = string
       uuid = string
       tenant_name = string
+      domain_name = string
     })
 }
 variable public_network_name {
