@@ -1,10 +1,7 @@
 locals {
     deployment = var.deployment
 
-    domain_name = format("%s.%s",
-        data.openstack_identity_auth_scope_v3.scope.project_name,
-        var.domain_name
-    )
+    domain_name = local.deployment.domain_name
 
     public_network_name = var.public_network_name
     private_network_cidr = var.private_network_cidr

@@ -23,9 +23,9 @@ variable private_network_name {
     default = "private"
 }
 
-variable domain_name {
-    type = string
-}
+#variable domain_name {
+#    type = string
+#}
 
 variable private_subnet_dhcp_enable {
     type    = bool
